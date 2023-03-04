@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function getComputerChoice() {
+        let choices = ["rock", "paper", "scissors"];
+        let computerChoice = choices[Math.floor(Math.random()*choices.length)];
+        console.log(computerChoice);
+        return computerChoice;
+    }
+    function playRound(playerSelection, computerSelection) {
+        if (playerSelection === computerSelection) {
+            alert(`${playerSelection} - ${computerSelection} You think exactly like a computer!`);
+        } else if ((playerSelection === "rock" && computerSelection === "scissors") || (playerSelection === "scissors" && computerSelection === "paper") || (playerSelection === "paper" && computerSelection === "rock")) {
+            alert(`${playerSelection} - ${computerSelection} You win! Congratulation.`);
+        } else {
+            alert(`${playerSelection} - ${computerSelection} You lose this round!`);
+        }
+    }
+    const playerSelection = prompt("Insert your pick here:").toLowerCase();
+    const computerSelection = getComputerChoice();  
+    playRound(playerSelection, computerSelection);
+    </script>
+</body>
+</html>
